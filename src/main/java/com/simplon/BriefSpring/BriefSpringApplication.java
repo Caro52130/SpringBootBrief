@@ -19,7 +19,7 @@ import com.simplon.BriefSpring.View.ViewCustomers;
 	}
 	
 	public void run(String...args) throws Exception {
-		vw.displayClients();
+	//	vw.displayClients();
 	}	
 	
 }

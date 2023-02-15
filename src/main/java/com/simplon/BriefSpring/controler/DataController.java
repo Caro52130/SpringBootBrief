@@ -29,12 +29,12 @@ public class DataController {
 			 String address= scn.nextLine();
 			 
 			 System.out.println("Entrez le code postal:");
-			 String postalCode= scn.nextLine();
+			 String postal_code= scn.nextLine();
 			 
 			 System.out.println("Entrez la ville:");
 			 String city= scn.nextLine();
 			 
-	        return dataRespository.save(new Customer(name, siret, address, postalCode, city));
+	        return dataRespository.save(new Customer(name, siret, address, postal_code, city));
 	    }
 
 //	    public Customer update(@PathVariable String id, @RequestBody Map<String, String> body){

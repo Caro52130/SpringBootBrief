@@ -6,17 +6,17 @@ import jakarta.persistence.*;
 @Entity
 public class Customer{
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String siret; 
 	private String address; 
-	private String postalCode; 
+	private String postal_code; 
 	private String city;
 	
 	@Override
 	public String toString() {
-		return (name +" "+ siret +" "+ address+ " "+ postalCode+ " "+ city );
+		return (name +" "+ siret +" "+ address+ " "+ postal_code+ " "+ city );
 	}
 
 	public Customer(String name, String siret, String address, String postalCode, String city) {
@@ -24,7 +24,7 @@ public class Customer{
 		this.name = name;
 		this.siret = siret;
 		this.address = address;
-		this.postalCode = postalCode;
+		this.postal_code = postalCode;
 		this.city = city;
 	}
 	
@@ -65,11 +65,11 @@ public class Customer{
 	}
 
 	public String getPostalCode() {
-		return postalCode;
+		return postal_code;
 	}
 
 	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
+		this.postal_code = postalCode;
 	}
 
 	public String getCity() {

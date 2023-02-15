@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface DataRepository extends JpaRepository<Customer, Integer> {
-	List<Customer> findByTitleContainingOrContentContaining(String text, String textAgain); 
+
 }
 
 
