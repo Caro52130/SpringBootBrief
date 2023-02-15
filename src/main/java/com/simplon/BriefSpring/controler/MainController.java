@@ -2,6 +2,7 @@ package com.simplon.BriefSpring.controler;
 
 import org.springframework.stereotype.Controller;
 
+import com.simplon.BriefSpring.form.CustomerForm;
 import com.simplon.BriefSpring.model.*;
 
 import java.util.ArrayList;
@@ -13,9 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class MainController {
 	private static List<Customer> customers = new ArrayList<Customer>();
 
@@ -36,7 +36,7 @@ public class MainController {
 
 		model.addAttribute("message", message);
 
-		return "index1";
+		return "index";
 	}
 
 	@RequestMapping(value = { "/customerList" }, method = RequestMethod.GET)
@@ -50,28 +50,28 @@ public class MainController {
 	@RequestMapping(value = { "/addCustomer" }, method = RequestMethod.GET)
 	public String showAddCustomerPage(Model model) {
 
-		Customer customerForm = new Customer();
+		CustomerForm customerForm = new CustomerForm();
 		model.addAttribute("customerForm", customerForm);
 
-		return "addPerson";
+		return "addCustomer";
 	}
 
 	@RequestMapping(value = { "/addCustomer" }, method = RequestMethod.POST)
 	public String saveCustomer(Model model, //
-			@ModelAttribute("customerForm") Customer customerForm) {
+			@ModelAttribute("customerForm") CustomerForm customerForm) {
 
 		String name = customerForm.getName();
 		String siret = customerForm.getSiret();
 		String address = customerForm.getAddress();
-		String postal_code = customerForm.getPostalCode();
+		String postalcode = customerForm.getPostalCode();
 		String city = customerForm.getCity();
 
 		if (name != null && name.length() > 0 
 				&& siret != null && siret.length() > 0 
 				&& address != null && address.length() > 0
-				&& postal_code != null && postal_code.length() > 0
+				&& postalcode != null && postalcode.length() > 0
 				&& city != null && city.length() > 0) {
-			Customer newCustomer = new Customer(name, siret, address, postal_code, city);
+			Customer newCustomer = new Customer(name, siret, address, postalcode, city);
 			customers.add(newCustomer);
 
 			return "redirect:/customerList";

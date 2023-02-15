@@ -5,14 +5,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.simplon.BriefSpring.View.ViewCustomers;
+//import com.simplon.BriefSpring.View.ViewCustomers;
 
 
 	@SpringBootApplication
 	public class BriefSpringApplication implements CommandLineRunner {
 
-	@Autowired
-	private ViewCustomers vw;
+//	@Autowired
+//	private ViewCustomers vw;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BriefSpringApplication.class, args);

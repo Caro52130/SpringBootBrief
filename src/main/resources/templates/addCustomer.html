@@ -15,7 +15,7 @@
          -->
          
       <form th:action="@{/addCustomer}"
-         th:object="${customersForm}" method="POST">
+         th:object="${customerForm}" method="POST">
          Name:
          <input type="text" th:field="*{name}" />    
          <br/>
@@ -26,10 +26,12 @@
          <input type="text" th:field="*{address}" />    
          <br/>
          Postal Code: 
-         <input type="text" th:field="*{postal_code}" />          
+         <input type="text" th:field="*{postalCode}" />          
          <br/>
-         City: 
-         <input type="submit" value="city" />
+         City:  
+         <input type="text" th:field="*{city}" />          
+         <br/>
+         <input type="submit" value="Create" />
       </form>
       
       <br/>

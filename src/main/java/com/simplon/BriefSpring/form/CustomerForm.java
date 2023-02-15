@@ -1,13 +1,6 @@
-package com.simplon.BriefSpring.model;
+package com.simplon.BriefSpring.form;
 
-import jakarta.persistence.*;
-
-
-@Entity
-public class Customer{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+public class CustomerForm {
 	private String name;
 	private String siret; 
 	private String address; 
@@ -19,7 +12,7 @@ public class Customer{
 		return (name +" "+ siret +" "+ address+ " "+ postalCode+ " "+ city );
 	}
 
-	public Customer(String name, String siret, String address, String postalCode, String city) {
+	public CustomerForm(String name, String siret, String address, String postalCode, String city) {
 		super();
 		this.name = name;
 		this.siret = siret;
@@ -28,7 +21,7 @@ public class Customer{
 		this.city = city;
 	}
 	
-	public Customer() {
+	public CustomerForm() {
 
 	}
 
@@ -38,14 +31,6 @@ public class Customer{
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getSiret() {
@@ -80,5 +65,3 @@ public class Customer{
 		this.city = city;
 	}
 }
-
-
