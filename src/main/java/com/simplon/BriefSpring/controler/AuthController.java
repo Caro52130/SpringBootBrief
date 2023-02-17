@@ -5,7 +5,10 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.simplon.BriefSpring.model.User;
 import com.simplon.BriefSpring.model.UserDto;
@@ -71,4 +74,10 @@ public class AuthController {
         model.addAttribute("users", users);
         return "users";
     }
+    
+	@RequestMapping(value = {"deleteUser/{id}"}, method = RequestMethod.GET)
+	public String deleteUser(@PathVariable(value = "id") long id) {
+		this.userService.deleteUserById(id);
+		return "redirect:/users";
+	}
 }

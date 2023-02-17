@@ -59,6 +59,7 @@ public class UserServiceImpl implements UserService {
 
     private UserDto mapToUserDto(User user){
         UserDto userDto = new UserDto();
+        userDto.setId(user.getId());
         String[] str = user.getName().split(" ");
         userDto.setFirstName(str[0]);
         userDto.setLastName(str[1]);
@@ -71,5 +72,10 @@ public class UserServiceImpl implements UserService {
         role.setName("ROLE_USER");
         return roleRepository.save(role);
     }
+
+	@Override
+	public void deleteUserById(long id) {
+		this.userRepository.deleteById(id);
+	}
 
 }

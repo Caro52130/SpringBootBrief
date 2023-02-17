@@ -6,9 +6,11 @@ import com.simplon.BriefSpring.model.User;
 import com.simplon.BriefSpring.model.UserDto;
 
 public interface UserService {
-	 void saveUser(UserDto userDto);
+	void saveUser(UserDto userDto);
 
-	    User findUserByEmail(String email);
+	User findUserByEmail(String email);
 
-	    List<UserDto> findAllUsers();
+	List<UserDto> findAllUsers();
+
+	void deleteUserById(long id);
 }
