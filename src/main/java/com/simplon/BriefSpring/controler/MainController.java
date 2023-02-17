@@ -20,20 +20,20 @@ public class MainController {
 	@Autowired
 	private CustomerService customerService;	
     
-	// Inject via application.properties
-	@Value("${welcome.message}")
-	private String message;
+//	// Inject via application.properties
+//	@Value("${welcome.message}")
+//	private String message;
 
 	@Value("${error.message}")
 	private String errorMessage;
 
-	@RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
-	public String index(Model model) {
-
-		model.addAttribute("message", message);
-
-		return "index";
-	}
+//	@RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
+//	public String index(Model model) {
+//
+//		model.addAttribute("message", message);
+//
+//		return "index";
+//	}
 
 	@RequestMapping(value = { "/customerList" }, method = RequestMethod.GET)
 	public String customerList(Model model) {
