@@ -6,16 +6,11 @@
       <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
    </head>
    <body>
-      <h1>Create a Customer:</h1>
-      
-      <!--  
-         In Thymeleaf the equivalent of
-         JSP's ${pageContext.request.contextPath}/edit.html
-         would be @{/edit.html}         
-         -->
+      <h1>Update a Customer:</h1>
          
       <form action="#" th:action="@{/addCustomer}"
          th:object="${customer}" method="POST">
+         <input type="hidden" th:field="*{id}" />
          Name:
          <input type="text" th:field="*{name}" />    
          <br/>
@@ -31,7 +26,7 @@
          City:  
          <input type="text" th:field="*{city}" />          
          <br/>
-         <button type="submit">Save Customer</button>
+         <button type="submit">Update Customer</button>
       </form>
       
       <hr>
